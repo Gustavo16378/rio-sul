@@ -234,7 +234,7 @@ export default function Home() {
             <RevealSection>
               <div className="relative">
                 <img
-                  src="/images/sede.jpg"
+                  src="/photos/sede.jpeg"
                   alt="Sede Rio Sul Benefícios em Palmas/TO"
                   className="w-full aspect-[4/3] rounded-2xl object-cover"
                   loading="lazy"
