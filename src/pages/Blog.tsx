@@ -77,7 +77,7 @@ export default function Blog() {
               >
                 <div className="w-full aspect-[16/7] relative overflow-hidden">
                   <img
-                    src={`/images/blog/post-${featured.id}.jpg`}
+                    src={featured.image ?? ''}
                     alt={featured.title}
                     className="w-full h-full object-cover"
                     loading="lazy"
@@ -111,7 +111,7 @@ export default function Blog() {
                   >
                     <div className="w-full h-28 relative overflow-hidden">
                       <img
-                        src={`/images/blog/post-${post.id}.jpg`}
+                        src={post.image ?? ''}
                         alt={post.title}
                         className="w-full h-full object-cover"
                         loading="lazy"
@@ -148,7 +148,7 @@ export default function Blog() {
                   >
                     <div className="w-full h-36 relative overflow-hidden">
                       <img
-                        src={`/images/blog/post-${post.id}.jpg`}
+                        src={post.image ?? ''}
                         alt={post.title}
                         className="w-full h-full object-cover"
                         loading="lazy"
