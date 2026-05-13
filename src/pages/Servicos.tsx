@@ -47,7 +47,7 @@ export default function Servicos() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <RevealSection>
               <img
-                src="/images/assistencia.jpg"
+                src="/photos/assistencia.jpg"
                 alt="Equipe de assistência 24h Rio Sul"
                 className="w-full aspect-[4/3] rounded-2xl object-cover"
                 loading="lazy"
