@@ -2,8 +2,6 @@ import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { Shield, Zap, Layers, Check, ChevronRight, Home } from 'lucide-react'
 import { services } from '../data/services'
-import Img from '../components/Img'
-
 function RevealSection({ children, className = '' }: { children: React.ReactNode; className?: string }) {
   const ref = useRef<HTMLDivElement>(null)
   useEffect(() => {
@@ -47,13 +45,12 @@ export default function Servicos() {
       <section className="bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            {/* IMAGEM: public/images/assistencia.jpg — proporção 4:3, ex: 800×600px */}
             <RevealSection>
-              <Img
+              <img
                 src="/images/assistencia.jpg"
                 alt="Equipe de assistência 24h Rio Sul"
-                className="w-full aspect-[4/3] rounded-2xl"
-                placeholderLabel="Solte aqui: public/images/assistencia.jpg (4:3)"
+                className="w-full aspect-[4/3] rounded-2xl object-cover"
+                loading="lazy"
               />
             </RevealSection>
 

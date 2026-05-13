@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom'
 import { Shield, Zap, Layers, Star, ChevronRight, Award, Clock, CheckCircle } from 'lucide-react'
 import { services } from '../data/services'
 import { testimonials } from '../data/testimonials'
-import Img from '../components/Img'
-
 const iconMap: Record<string, React.ElementType> = { Shield, Zap, Layers }
 
 function useReveal() {
@@ -233,14 +231,13 @@ export default function Home() {
               </Link>
             </RevealSection>
 
-            {/* IMAGEM: public/images/sede.jpg — proporção 4:3, ex: 800×600px */}
             <RevealSection>
               <div className="relative">
-                <Img
+                <img
                   src="/images/sede.jpg"
                   alt="Sede Rio Sul Benefícios em Palmas/TO"
-                  className="w-full aspect-[4/3] rounded-2xl"
-                  placeholderLabel="Solte aqui: public/images/sede.jpg (4:3)"
+                  className="w-full aspect-[4/3] rounded-2xl object-cover"
+                  loading="lazy"
                 />
                 <div
                   className="absolute -bottom-4 -right-4 rounded-xl px-5 py-4 shadow-lg"

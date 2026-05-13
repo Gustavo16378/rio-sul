@@ -2,8 +2,6 @@ import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { Clock, ChevronRight, ChevronLeft, Home } from 'lucide-react'
 import { posts } from '../data/posts'
-import Img from '../components/Img'
-
 function RevealSection({ children, className = '' }: { children: React.ReactNode; className?: string }) {
   const ref = useRef<HTMLDivElement>(null)
   useEffect(() => {
@@ -78,11 +76,11 @@ export default function Blog() {
                 onMouseLeave={e => (e.currentTarget.style.borderColor = 'var(--border)')}
               >
                 <div className="w-full aspect-[16/7] relative overflow-hidden">
-                  <Img
+                  <img
                     src={`/images/blog/post-${featured.id}.jpg`}
                     alt={featured.title}
-                    className="w-full h-full"
-                    placeholderLabel={`public/images/blog/post-${featured.id}.jpg  (16:7 · 1200×525px)`}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
                   />
                   <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
                 </div>
@@ -112,11 +110,11 @@ export default function Blog() {
                     onMouseLeave={e => (e.currentTarget.style.borderColor = 'var(--border)')}
                   >
                     <div className="w-full h-28 relative overflow-hidden">
-                      <Img
+                      <img
                         src={`/images/blog/post-${post.id}.jpg`}
                         alt={post.title}
-                        className="w-full h-full"
-                        placeholderLabel={`public/images/blog/post-${post.id}.jpg  (3:2 · 600×400px)`}
+                        className="w-full h-full object-cover"
+                        loading="lazy"
                       />
                       <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
                     </div>
@@ -149,11 +147,11 @@ export default function Blog() {
                     onMouseLeave={e => (e.currentTarget.style.borderColor = 'var(--border)')}
                   >
                     <div className="w-full h-36 relative overflow-hidden">
-                      <Img
+                      <img
                         src={`/images/blog/post-${post.id}.jpg`}
                         alt={post.title}
-                        className="w-full h-full"
-                        placeholderLabel={`public/images/blog/post-${post.id}.jpg  (4:3 · 800×600px)`}
+                        className="w-full h-full object-cover"
+                        loading="lazy"
                       />
                       <div className="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
                     </div>
