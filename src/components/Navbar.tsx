@@ -137,7 +137,7 @@ export default function Navbar() {
           <img
             src="/photos/logo.jpeg"
             alt="Rio Sul Benefícios"
-            className="h-10 w-auto object-contain"
+            className="h-14 w-auto object-contain"
           />
         </Link>
 
