@@ -17,15 +17,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* Col 1 — Logo e redes */}
           <div>
-            <div className="flex items-center gap-3 mb-4">
-              <div className="relative w-10 h-10 bg-red rounded flex items-center justify-center flex-shrink-0">
-                <span className="font-serif font-bold text-base text-white">RS</span>
-                <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-gold rounded-full border-2 border-footer-bg" />
-              </div>
-              <div className="leading-tight">
-                <div className="font-serif font-bold text-sm text-white">Rio Sul</div>
-                <div className="text-[10px] font-sans tracking-widest uppercase text-gray-400">Benefícios</div>
-              </div>
+            <div className="mb-4">
+              <img
+                src="/photos/logo.jpeg"
+                alt="Rio Sul Benefícios"
+                className="h-10 w-auto object-contain rounded-lg"
+              />
             </div>
             <p className="font-sans text-sm text-gray-400 leading-relaxed mb-5">
               Proteção veicular completa para você e sua família. Há mais de 25 anos cuidando do que move você.

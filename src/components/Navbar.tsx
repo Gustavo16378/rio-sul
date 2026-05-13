@@ -69,14 +69,11 @@ export default function Navbar() {
       >
         <div className="flex items-center justify-between mb-8">
           <div className="flex items-center gap-2">
-            <div className="relative w-8 h-8 bg-red rounded flex items-center justify-center">
-              <span className="font-serif font-bold text-sm text-white">RS</span>
-              <span className="absolute -top-1 -right-1 w-2 h-2 bg-gold rounded-full" />
-            </div>
-            <div className="leading-tight">
-              <div className="font-serif font-bold text-xs text-ink">Rio Sul</div>
-              <div className="text-[9px] font-sans tracking-widest uppercase text-ink-soft">Benefícios</div>
-            </div>
+            <img
+              src="/photos/logo.jpeg"
+              alt="Rio Sul Benefícios"
+              className="h-9 w-auto object-contain"
+            />
           </div>
           <button
             onClick={() => setIsOpen(false)}
@@ -136,15 +133,12 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-3 flex-shrink-0">
-          <div className="relative w-10 h-10 bg-red rounded flex items-center justify-center">
-            <span className="font-serif font-bold text-base text-white">RS</span>
-            <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-gold rounded-full border-2 border-white" />
-          </div>
-          <div className="leading-tight">
-            <div className="font-serif font-bold text-sm text-ink">Rio Sul</div>
-            <div className="text-[10px] font-sans tracking-widest uppercase text-ink-soft">Benefícios</div>
-          </div>
+        <Link to="/" className="flex-shrink-0">
+          <img
+            src="/photos/logo.jpeg"
+            alt="Rio Sul Benefícios"
+            className="h-10 w-auto object-contain"
+          />
         </Link>
 
         {/* Links desktop */}
