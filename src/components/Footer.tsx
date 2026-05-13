@@ -28,7 +28,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="font-sans text-sm text-gray-400 leading-relaxed mb-5">
-              Proteção veicular completa para você e sua família. Há mais de 13 anos cuidando do que move você.
+              Proteção veicular completa para você e sua família. Há mais de 25 anos cuidando do que move você.
             </p>
             <div className="flex items-center gap-3">
               <a

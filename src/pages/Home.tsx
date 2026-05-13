@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { Shield, Zap, Layers, Star, ChevronRight, Award, Clock, CheckCircle } from 'lucide-react'
 import { services } from '../data/services'
 import { testimonials } from '../data/testimonials'
+import Img from '../components/Img'
 
 const iconMap: Record<string, React.ElementType> = { Shield, Zap, Layers }
 
@@ -54,7 +55,7 @@ export default function Home() {
                 style={{ background: '#FFF3E0', border: '1px solid #F5A623', color: '#8B1A1A' }}
               >
                 <Shield size={14} className="text-red" />
-                ISO 9001 · AAAPV · +13 anos protegendo você
+                ISO 9001 · AAAPV · +25 anos protegendo você
               </div>
 
               <h1
@@ -91,7 +92,7 @@ export default function Home() {
               {/* Stats */}
               <div className="flex flex-wrap items-center gap-0 divide-x divide-border">
                 {[
-                  { num: '+13', label: 'Anos' },
+                  { num: '+25', label: 'Anos' },
                   { num: '24h', label: 'Assistência' },
                   { num: 'ISO', label: '9001' },
                   { num: 'AA', label: 'APV' },
@@ -203,7 +204,7 @@ export default function Home() {
                 Uma associação que cuida do que move você.
               </h2>
               <p className="font-sans text-ink-soft leading-relaxed mb-8">
-                Fundada em 2012 em Palmas/TO, a Rio Sul Benefícios nasceu com a missão de oferecer proteção veicular acessível, humana e eficiente. Hoje somos certificados ISO 9001 e associados à AAAPV, com cobertura nacional e atendimento 24 horas.
+                Fundada em 2000 em Palmas/TO, a Rio Sul Benefícios nasceu com a missão de oferecer proteção veicular acessível, humana e eficiente. Hoje somos certificados ISO 9001 e associados à AAAPV, com cobertura nacional e atendimento 24 horas.
               </p>
 
               <div className="flex flex-col gap-5 mb-10">
@@ -232,26 +233,21 @@ export default function Home() {
               </Link>
             </RevealSection>
 
-            {/* Placeholder imagem */}
+            {/* IMAGEM: public/images/sede.jpg — proporção 4:3, ex: 800×600px */}
             <RevealSection>
               <div className="relative">
-                <div
+                <Img
+                  src="/images/sede.jpg"
+                  alt="Sede Rio Sul Benefícios em Palmas/TO"
                   className="w-full aspect-[4/3] rounded-2xl"
-                  style={{ background: 'linear-gradient(135deg, #e8e4e0 0%, #d4cfc9 100%)' }}
-                >
-                  <div className="w-full h-full flex items-center justify-center">
-                    <div className="text-center">
-                      <Shield size={48} className="text-red/30 mx-auto mb-3" />
-                      <p className="font-sans text-ink-soft text-sm">Imagem da sede</p>
-                    </div>
-                  </div>
-                </div>
+                  placeholderLabel="Solte aqui: public/images/sede.jpg (4:3)"
+                />
                 <div
                   className="absolute -bottom-4 -right-4 rounded-xl px-5 py-4 shadow-lg"
                   style={{ background: 'var(--red)' }}
                 >
                   <p className="font-sans text-xs text-red-200 uppercase tracking-wider">Fundada em</p>
-                  <p className="font-serif font-bold text-white text-2xl">2012</p>
+                  <p className="font-serif font-bold text-white text-2xl">2000</p>
                 </div>
               </div>
             </RevealSection>

@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { Shield, Zap, Layers, Check, ChevronRight, Home } from 'lucide-react'
 import { services } from '../data/services'
+import Img from '../components/Img'
 
 function RevealSection({ children, className = '' }: { children: React.ReactNode; className?: string }) {
   const ref = useRef<HTMLDivElement>(null)
@@ -46,17 +47,14 @@ export default function Servicos() {
       <section className="bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            {/* Placeholder imagem esquerda */}
+            {/* IMAGEM: public/images/assistencia.jpg — proporção 4:3, ex: 800×600px */}
             <RevealSection>
-              <div
-                className="w-full aspect-[4/3] rounded-2xl flex items-center justify-center"
-                style={{ background: 'linear-gradient(135deg, #f5f0eb 0%, #e8e2db 100%)', border: '1px solid var(--border)' }}
-              >
-                <div className="text-center">
-                  <Zap size={56} className="text-red/30 mx-auto mb-3" />
-                  <p className="font-sans text-ink-soft text-sm">Assistência 24h</p>
-                </div>
-              </div>
+              <Img
+                src="/images/assistencia.jpg"
+                alt="Equipe de assistência 24h Rio Sul"
+                className="w-full aspect-[4/3] rounded-2xl"
+                placeholderLabel="Solte aqui: public/images/assistencia.jpg (4:3)"
+              />
             </RevealSection>
 
             <RevealSection>

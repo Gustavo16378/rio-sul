@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { Clock, ChevronRight, ChevronLeft, Home } from 'lucide-react'
 import { posts } from '../data/posts'
+import Img from '../components/Img'
 
 function RevealSection({ children, className = '' }: { children: React.ReactNode; className?: string }) {
   const ref = useRef<HTMLDivElement>(null)
@@ -62,9 +63,13 @@ export default function Blog() {
       {/* Posts */}
       <section className="bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
-          {/* Grid assimétrico */}
+
+          {/* Grid assimétrico — destaque + 2 laterais */}
+          {/* IMAGENS: public/images/blog/post-{id}.jpg */}
+          {/* Post destaque: 16:7, ex: 1200×525px  |  Posts laterais: 3:2, ex: 600×400px  |  Posts menores: 4:3, ex: 800×600px */}
           <RevealSection>
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+
               {/* Post destaque */}
               <div
                 className="lg:col-span-2 rounded-2xl overflow-hidden border cursor-pointer group transition-all duration-300 hover:-translate-y-0.5"
@@ -72,14 +77,14 @@ export default function Blog() {
                 onMouseEnter={e => (e.currentTarget.style.borderColor = 'var(--red)')}
                 onMouseLeave={e => (e.currentTarget.style.borderColor = 'var(--border)')}
               >
-                <div
-                  className="w-full aspect-[16/7] relative overflow-hidden"
-                  style={{ background: 'linear-gradient(135deg, #e8e2db 0%, #d4cfc9 100%)' }}
-                >
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <p className="font-sans text-ink-soft text-sm">Imagem do artigo</p>
-                  </div>
-                  <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black/20 to-transparent" />
+                <div className="w-full aspect-[16/7] relative overflow-hidden">
+                  <Img
+                    src={`/images/blog/post-${featured.id}.jpg`}
+                    alt={featured.title}
+                    className="w-full h-full"
+                    placeholderLabel={`public/images/blog/post-${featured.id}.jpg  (16:7 · 1200×525px)`}
+                  />
+                  <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
                 </div>
                 <div className="p-7">
                   <div className="flex items-center gap-3 mb-4">
@@ -96,7 +101,7 @@ export default function Blog() {
                 </div>
               </div>
 
-              {/* 2 posts menores */}
+              {/* 2 posts laterais */}
               <div className="flex flex-col gap-6">
                 {sideOthers.map(post => (
                   <div
@@ -106,11 +111,14 @@ export default function Blog() {
                     onMouseEnter={e => (e.currentTarget.style.borderColor = 'var(--red)')}
                     onMouseLeave={e => (e.currentTarget.style.borderColor = 'var(--border)')}
                   >
-                    <div
-                      className="w-full h-28 relative overflow-hidden"
-                      style={{ background: 'linear-gradient(135deg, #e8e2db 0%, #d4cfc9 100%)' }}
-                    >
-                      <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-black/20 to-transparent" />
+                    <div className="w-full h-28 relative overflow-hidden">
+                      <Img
+                        src={`/images/blog/post-${post.id}.jpg`}
+                        alt={post.title}
+                        className="w-full h-full"
+                        placeholderLabel={`public/images/blog/post-${post.id}.jpg  (3:2 · 600×400px)`}
+                      />
+                      <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
                     </div>
                     <div className="p-5">
                       <div className="flex items-center gap-2 mb-2">
@@ -140,11 +148,14 @@ export default function Blog() {
                     onMouseEnter={e => (e.currentTarget.style.borderColor = 'var(--red)')}
                     onMouseLeave={e => (e.currentTarget.style.borderColor = 'var(--border)')}
                   >
-                    <div
-                      className="w-full h-36 relative overflow-hidden"
-                      style={{ background: 'linear-gradient(135deg, #e8e2db 0%, #d4cfc9 100%)' }}
-                    >
-                      <div className="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-black/20 to-transparent" />
+                    <div className="w-full h-36 relative overflow-hidden">
+                      <Img
+                        src={`/images/blog/post-${post.id}.jpg`}
+                        alt={post.title}
+                        className="w-full h-full"
+                        placeholderLabel={`public/images/blog/post-${post.id}.jpg  (4:3 · 800×600px)`}
+                      />
+                      <div className="absolute bottom-0 left-0 right-0 h-10 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
                     </div>
                     <div className="p-6">
                       <div className="flex items-center gap-2 mb-3">
