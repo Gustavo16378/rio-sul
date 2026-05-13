@@ -215,6 +215,20 @@ export default function Contato() {
               )}
             </div>
           </div>
+
+          {/* Mapa */}
+          <div className="mt-8 rounded-2xl overflow-hidden" style={{ border: '1px solid var(--border)' }}>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3926.4684228131105!2d-48.332631299999996!3d-10.223753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x933b34bd8e2384d1%3A0xea459715932d23fc!2sRio%20Sul%20-%20Clube%20de%20Beneficios!5e0!3m2!1spt-BR!2sbr!4v1778644630976!5m2!1spt-BR!2sbr"
+              width="100%"
+              height="400"
+              style={{ border: 0, display: 'block' }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Localização Rio Sul Benefícios"
+            />
+          </div>
         </div>
       </section>
     </main>
